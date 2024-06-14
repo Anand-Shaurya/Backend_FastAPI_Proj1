@@ -1,0 +1,14 @@
+{
+    "student_list": [
+        {
+            "name": "Anand",
+            "adm_no": 1,
+            "dept": "CSE"
+        },
+        {
+            "name": "Ananda",
+            "adm_no": 2,
+            "dept": "CSE"
+        }
+    ]
+}
