@@ -1,4 +1,5 @@
 import json
+from typing import Optional
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
@@ -12,16 +13,19 @@ class Student(BaseModel):
 
 
 
-@app.get("/items/{adm_no}")
-async def get_student(adm_no):
+@app.get("/students/")
+async def get_student(adm_no: Optional[int] = None):
     with open("jk.json", "r") as file:
         student_file= json.load(file)
     students = student_file["student_list"]
-    for i in students:
-        if i["adm_no"] == adm_no:
-            return i
+    if adm_no:
+        for i in students:
+            if i["adm_no"] == adm_no:
+                return i
+    else:
+        return students
 
-@app.post("/items/")
+@app.post("/students/")
 async def get_student(student: Student):
     try:
         with open("jk.json", "r") as file:
@@ -43,7 +47,7 @@ async def get_student(student: Student):
 
     return student
 
-@app.put("/items/")
+@app.put("/students/")
 async def get_student(student: Student):
     try:
         with open("jk.json", "r") as file:
@@ -71,7 +75,7 @@ async def get_student(student: Student):
 
     return student
 
-@app.delete("/items/{adm_no}")
+@app.delete("/students/{adm_no}")
 async def get_student(adm_no):
     try:
         with open("jk.json", "r") as file:
@@ -84,11 +88,11 @@ async def get_student(adm_no):
     flag = True
 
     for i in range(len(students)):
-        print(students[i]["adm_no"], adm_no)
+        # print(students[i]["adm_no"], adm_no)
         if str(students[i]["adm_no"]) == str(adm_no):
             flag = False
             student = students.pop(i)
-            print(flag, student)
+            # print(flag, student)
             break
     
                     
