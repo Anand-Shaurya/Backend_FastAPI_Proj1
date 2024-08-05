@@ -1,7 +1,7 @@
-# if you are starting this project for the first time 
+# If you are starting this project for the first time 
 .\.venv\Scripts\activate
 pip install -r requirements.txt
-# whenever someone adds a new package please update the reqirements.txt
+# Whenever someone adds a new package please update the reqirements.txt
 pip freeze > requirements.txt
 
 fastapi dev main.py
