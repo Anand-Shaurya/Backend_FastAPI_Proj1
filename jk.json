@@ -9,6 +9,11 @@
             "name": "Ananda",
             "adm_no": 2,
             "dept": "CSE"
+        },
+        {
+            "name": "Gopal",
+            "adm_no": 4,
+            "dept": "CSE"
         }
     ]
 }
