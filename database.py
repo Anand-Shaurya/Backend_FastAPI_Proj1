@@ -5,7 +5,7 @@ from .. import settings
 
 MONGO_DB = {
     "username": "career525mentor",
-    "password": "Mentor@1010",
+    "password": "Mentor@1010", 
     "cluster_name": "mentrentcluster1",
     "database_name": "ignitedminds"
 }
